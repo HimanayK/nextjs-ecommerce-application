@@ -632,3 +632,15 @@ https://dashboard.stripe.com/test/workbench/overview
     ```
 
     - npm run build && npm run start
+
+
+## Deployment in Vercel 
+
+- Add .env.local variables in Environment variables
+- Create Event destination endpoint url in Stripe>Developer>Webhook
+  - Select checkout option
+  - paste vercel project url with `/webhook`
+- Copy the Signing secret key from Stripe Webhook and paste it in 
+`STRIPE_WEBHOOK_SECRET` key's value in Vercel `Environment Variables`
+![alt text](image-37.png)
+- Add Vercel url domains in `sanity>ecommerce-build>API>CORS Origins`
