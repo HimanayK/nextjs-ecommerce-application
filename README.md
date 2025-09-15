@@ -647,4 +647,11 @@ https://dashboard.stripe.com/test/workbench/overview
 
 
 
+<<<<<<< HEAD
 git add . git commit -m "initial commit" git branch -M main git push -u origin main
+=======
+git add .
+git commit -m "initial commit"
+git branch -M main
+git push -u origin main
+>>>>>>> f9d87087b52c6f9978b96e5ccae3ceb0e709964d
