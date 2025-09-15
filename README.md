@@ -637,21 +637,23 @@ https://dashboard.stripe.com/test/workbench/overview
 ## Deployment in Vercel 
 
 - Add .env.local variables in Environment variables
-- Create Event destination endpoint url in Stripe>Developer>Webhook
+- Create **Event destination endpoint url** in Stripe>Developer>Webhook
   - Select checkout option
   - paste vercel project url with `/webhook`
-- Copy the Signing secret key from Stripe Webhook and paste it in 
+- Copy the **Signing secret key** from **Stripe Webhook** and paste it in 
 `STRIPE_WEBHOOK_SECRET` key's value in Vercel `Environment Variables`
 ![alt text](image-37.png)
 - Add Vercel url domains in `sanity>ecommerce-build>API>CORS Origins`
+- Update `src>actions>createCheckoutSession.ts`
+  ```tsx 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;  // before vercel deployment the value is  --> //process.env.NODE_ENV === 'production' ? `https://${process.env.VERCEL_URL}` : process.env.NEXT_PUBLIC_BASE_URL;
+   ```
+- update NEXT_PUBLIC_BASE_URL in **VERCEL** --> Environment Variable with value of vercel domain: 
+    - `https://nextjs-ecommerce-application-sage.vercel.app`
 
 
 
-<<<<<<< HEAD
-git add . git commit -m "initial commit" git branch -M main git push -u origin main
-=======
 git add .
 git commit -m "initial commit"
 git branch -M main
 git push -u origin main
->>>>>>> f9d87087b52c6f9978b96e5ccae3ceb0e709964d

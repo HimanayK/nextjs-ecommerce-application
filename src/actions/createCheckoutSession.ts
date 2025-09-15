@@ -36,7 +36,7 @@ export async function createCheckoutSession(items: GroupedBasketItem[], metadata
             customerId = customers.data[0].id
         }
 
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL; //process.env.NODE_ENV === 'production' ? `https://${process.env.VERCEL_URL}` : process.env.NEXT_PUBLIC_BASE_URL;
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;  //process.env.NODE_ENV === 'production' ? `https://${process.env.VERCEL_URL}` : process.env.NEXT_PUBLIC_BASE_URL;
         const success_url = `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`;
         const cancel_url = `${baseUrl}/basket`;
         const session = await stripe.checkout.sessions.create({
