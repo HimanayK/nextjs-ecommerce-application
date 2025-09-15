@@ -644,3 +644,7 @@ https://dashboard.stripe.com/test/workbench/overview
 `STRIPE_WEBHOOK_SECRET` key's value in Vercel `Environment Variables`
 ![alt text](image-37.png)
 - Add Vercel url domains in `sanity>ecommerce-build>API>CORS Origins`
+
+
+
+git add . git commit -m "initial commit" git branch -M main git push -u origin main

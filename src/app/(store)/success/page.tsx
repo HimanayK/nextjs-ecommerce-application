@@ -12,10 +12,12 @@ function SuccessPage() {
   const clearBasket = useBasketStore((state) => state.clearBasket);
 
   useEffect(() => {
-    if (orderNumber) {
-      clearBasket();
-    }
-  }, [orderNumber, clearBasket]);
+  if (orderNumber) {
+    clearBasket();
+    useBasketStore.persist.clearStorage(); // ✅ also clear localStorage
+  }
+}, [orderNumber, clearBasket]);
+
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
